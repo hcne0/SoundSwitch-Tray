@@ -1,0 +1,31 @@
+# Build outputs and packaged binaries
+.build/
+bin/
+obj/
+dist/
+*.exe
+*.dll
+*.pdb
+*.msix
+*.msixupload
+*.msixbundle
+*.appx
+*.appxbundle
+
+# Signing and certificate files
+*.cer
+*.pfx
+*.p12
+*.pvk
+*.snk
+
+# Visual Studio and temporary/test folders
+.vs/
+tmp/
+temp/
+staging/
+test/
+tests/TestResults/
+TestResults/
+*.tmp
+*.log

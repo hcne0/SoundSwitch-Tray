@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SoundSwitch Tray runs completely offline and collects, stores, and transmits zero personal data.">
+  <title>Privacy Policy | SoundSwitch Tray</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #172b3a; background: #f3f6f8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 3rem 1rem; line-height: 1.65; }
+    main { max-width: 48rem; margin: auto; padding: clamp(1.5rem, 5vw, 3rem); background: #fff; border: 1px solid #dde5eb; border-radius: 1rem; }
+    .app-name { margin: 0 0 .5rem; color: #176b5d; font-weight: 650; }
+    h1 { margin: 0 0 .75rem; font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.15; letter-spacing: -.035em; }
+    h2 { margin: 2rem 0 .5rem; font-size: 1.2rem; line-height: 1.3; }
+    p { margin: .75rem 0; }
+    .details { color: #526676; font-size: .95rem; }
+    .promise { margin-top: 1.75rem; padding: 1rem 1.25rem; background: #eef8f4; border-left: 4px solid #176b5d; border-radius: .25rem; }
+    code { padding: .1em .3em; background: #f3f6f8; border-radius: .2rem; font-size: .9em; overflow-wrap: anywhere; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #dde5eb; color: #526676; font-size: .9rem; }
+    @media print { body { padding: 0; background: #fff; } main { max-width: none; border: 0; padding: 0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="app-name">SoundSwitch Tray</p>
+      <h1>Privacy policy</h1>
+      <p class="details">Effective date: <time datetime="2026-11-21">November 21, 2026</time><br>Publisher: Munawer Hussain</p>
+    </header>
+
+    <p class="promise">SoundSwitch Tray runs <strong>completely offline</strong>. It collects, stores, and transmits <strong>zero personal data</strong>.</p>
+
+    <h2>What the app does</h2>
+    <p>SoundSwitch Tray lets you switch between connected Windows audio playback devices from the system tray. It reads playback device identifiers, device names, and the current default output locally to display the tray icon and respond to your clicks. It does not record audio or access microphone recordings.</p>
+
+    <h2>No data collection or transmission</h2>
+    <p>The app makes no network requests and has no accounts, advertising, analytics, telemetry, or online services. It does not collect usage history or personal information. It does not upload, share, sell, or transmit data to the publisher or anyone else.</p>
+
+    <h2>Local preferences</h2>
+    <p>The app saves only audio device color preferences on your computer. Each preference pairs a local Windows playback device identifier with the color used for that device's tray icon. Device names, audio content, and usage history are not saved.</p>
+    <p>These preferences are stored in <code>%LOCALAPPDATA%\SoundSwitch\colors.xml</code>. Windows may redirect this location to the packaged app's local data folder. The preferences remain on your computer and are never uploaded.</p>
+    <p>To reset the preferences, close SoundSwitch Tray and delete its <code>colors.xml</code> file. Fresh color assignments are created the next time the app runs. Windows manages installation, uninstallation, and cleanup of packaged app data.</p>
+
+    <h2>Startup and user control</h2>
+    <p>The Microsoft Store package enables Windows startup so the tray utility can be available after logon. You can disable this in Windows Settings under Apps &gt; Startup. Starting the app does not switch your playback device; switching happens only when you click the tray icon. Right-click the icon and choose Exit SoundSwitch to close the app.</p>
+
+    <footer>This policy applies to the SoundSwitch Tray application published by Munawer Hussain.</footer>
+  </main>
+</body>
+</html>

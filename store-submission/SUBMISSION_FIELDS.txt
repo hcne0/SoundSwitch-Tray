@@ -1,0 +1,42 @@
+DISPLAY NAME
+SoundSwitch Tray
+
+STORE DESCRIPTION
+SoundSwitch Tray is a small Windows notification-area utility for switching between connected playback devices. Click its loop icon to cycle from speakers to headphones or another enabled audio output. Windows playback defaults for multimedia and communications change together.
+
+The tray icon uses the active device's assigned color, with preferences remembered locally across restarts and reconnects. Hover over the icon to see the active output and connected device count. The app refreshes automatically when outputs are connected, disconnected, or changed in Windows. With zero or one output, switching is disabled.
+
+SoundSwitch Tray runs 100% offline, collects zero personal data, and makes zero network requests. There are no accounts, advertisements, analytics, or telemetry. Its only saved data is local audio device color preferences in %LOCALAPPDATA%\SoundSwitch\colors.xml.
+
+Launch SoundSwitch Tray once from Start after installation. Windows startup is enabled by default so the tray utility stays available after logon; users can disable it in Settings > Apps > Startup. Windows may initially place its icon in the notification-area overflow menu. Right-click the icon and select Exit SoundSwitch to close it. The app runs as the current user without administrator elevation. A named mutex prevents duplicate tray instances. Applications that use their own fixed audio output may keep that selection.
+
+Requires Windows 10 version 2004 (build 19041) or later, or Windows 11. At least two connected, enabled playback devices are needed to cycle outputs.
+
+APP FEATURES (each bullet is under 200 characters)
+- Cycle connected playback devices with one click from the Windows notification area.
+- Identify the active output by its loop icon color, with preferences saved locally.
+- Keep Windows multimedia and communications playback defaults in sync.
+- Refresh automatically when playback devices connect, disconnect, or change.
+- See the active playback device and output count in the tray tooltip.
+- Run fully offline with no accounts, advertising, networking, or telemetry.
+- Run as the current user without administrator elevation.
+- Start with Windows by default, with startup controlled through Windows Settings.
+- Keep a single tray instance when the app is launched again.
+
+RESTRICTED CAPABILITY JUSTIFICATION: runFullTrust
+SoundSwitch Tray is a classic .NET Framework WinForms tray utility, packaged as an AnyCPU desktop executable. It requires runFullTrust to run with Windows.FullTrustApplication, create its notification-area icon, and enumerate and cycle Windows default playback devices through Windows Core Audio COM interfaces. It uses IMMDeviceEnumerator to enumerate enabled playback endpoints and IPolicyConfig.SetDefaultEndpoint to update Windows playback defaults after an explicit user click. These existing desktop operations require the full-trust WinForms process rather than a UWP app container. The embedded executable manifest specifies asInvoker with uiAccess=false: no administrator elevation is requested. The app has zero networking or telemetry and stores only local audio device color preferences in %LOCALAPPDATA%\SoundSwitch\colors.xml. No other capabilities are declared.
+
+NOTES FOR CERTIFICATION
+This is an unsigned MSIX for Microsoft Store ingestion. Microsoft Store signs the package during certification. Identity Name is MunawerHussain.SoundSwitchTray; Publisher is CN=EC90E38D-07A2-491F-A9BB-F8B3460E191C; PublisherDisplayName is Munawer Hussain; DisplayName is SoundSwitch Tray; Version is 1.0.0.0; ProcessorArchitecture is neutral. SoundSwitch.exe is a classic .NET Framework WinForms AnyCPU tray utility using the Windows-provided .NET Framework, with Windows.FullTrustApplication as its entry point. The only restricted capability is runFullTrust, needed for its desktop tray UI and Windows Core Audio COM device enumeration and default-device cycling. It runs asInvoker with no administrator elevation, zero networking, and zero telemetry.
+
+The windows.startupTask extension declares SoundSwitchTrayStartup with Enabled=true to keep the tray utility available after logon. Its executable and full-trust entry point match the application. Launch the installed app once from Start to activate startup registration; users control startup in Settings > Apps > Startup. A named mutex ensures that later manual launches exit successfully without a second tray icon. Startup does not switch playback devices.
+
+There is intentionally no main window; look for the red/blue/yellow loop icon in the notification area or its overflow menu. Hover to read the active playback device and connected output count. With two or more enabled playback devices connected, a left-click cycles the default output for all three Windows audio roles (console, multimedia, and communications). This is the app's intended, explicitly user-triggered behavior. With zero or one connected output, clicking does not change defaults. Device detection refreshes about once per second. Right-click and select Exit SoundSwitch to close the app. No login, network connection, administrator rights, background service, or driver installation is required.
+
+The only persistent app data is device-to-color preferences in %LOCALAPPDATA%\SoundSwitch\colors.xml; Windows may virtualize this local location for the packaged app. The app does not record audio, collect personal data, or send network requests. Playback switching uses IPolicyConfig.SetDefaultEndpoint, an existing Windows COM interface; no audio drivers or Windows security settings are changed by the app.
+
+PRIVACY POLICY URL
+Host store-assets\privacy-policy.html at a publicly accessible HTTPS URL and paste that URL into Partner Center. The current listing and certification copy is also available in store-assets\partner-center-copy.md. Submission documents are provided separately from the MSIX.
+
+STORE APP TILE ICON
+Upload AppTileIcon_300x300.png as the 300x300, 1:1 app tile icon. This Store listing image is intentionally outside the MSIX.
