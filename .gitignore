@@ -29,3 +29,7 @@ tests/TestResults/
 TestResults/
 *.tmp
 *.log
+
+prompt.md
+store-submission/
+store-assets/partner-center-copy.md
